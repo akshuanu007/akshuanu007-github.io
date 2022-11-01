@@ -18,8 +18,7 @@ form.addEventListener('submit',(e)=>{
 const fetchPrice= async(ctype) =>{
     const r = await axios.get(`https://api.coinstats.app/public/v1/coins/${ctype}?currency=USD`);
     console.log(r.data.coin.price);
-     const rawPrice = r.data.coin.price;
-     const price = Math.round(rawPrice*100)/100.00;
+     const price = r.data.coin.price;
      const volume  = r.data.coin.volume;
      const change = r.data.coin.priceChange1d;
      const base = r.data.coin.name;
